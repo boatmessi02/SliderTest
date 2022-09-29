@@ -1,0 +1,94 @@
+/* App Slider */
+
+.section {
+  height: 100%;
+  margin-top: 40px;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1224px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapperIntroduce {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #222;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.wrapperIntroduce > img {
+  border-radius: 50%;
+}
+
+.textRole {
+  color: #888888;
+}
+
+.WrapperSlide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapperSlideImage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 2px solid orangered;
+  border-radius: 25px;
+}
+
+.wrapperSlideImage::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  z-index: 99;
+  height: 100%;
+  width: 100px;
+  border-radius: 25px;
+  background-image: linear-gradient(90deg, black, transparent);
+}
+
+.wrapperSlideImage::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  z-index: 99;
+  height: 100%;
+  width: 100px;
+  border-radius: 25px;
+  background-image: linear-gradient(-90deg, black, transparent);
+}
+
+.icon {
+  color: #ffb766;
+  font-size: 50px;
+  outline: none;
+  border: none;
+  padding: 0px 20px;
+  cursor: pointer;
+}
+
+.radioSlide {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}

@@ -1,0 +1,21 @@
+/* Footer */
+
+.containerFooter {
+  height: 40px;
+  display: flex;
+  background: #f37a01;
+  box-shadow: inset 1px 0 0 0 #f4810e;
+  border-left: 0 solid #e07002;
+  z-index: 99;
+  justify-content: center;
+}
+
+.wrapperFooter {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.links {
+  text-decoration: underline;
+}

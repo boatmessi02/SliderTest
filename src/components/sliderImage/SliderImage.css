@@ -1,0 +1,55 @@
+/* Slider Image */
+.slideImage {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  position: relative;
+  border-radius: 25px;
+}
+
+.coverImage {
+  position: absolute;
+  max-width: 600px;
+  top: 0;
+  left: 350px;
+  height: 300px;
+  margin: 15px 10px;
+  padding: 20px 0 0 0;
+  overflow: hidden;
+  z-index: 99;
+}
+.coverImage > img {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapperImageMapping {
+  position: relative;
+}
+
+.coverAllImages {
+  height: 350px;
+  margin: 1px 10px;
+  overflow: hidden;
+}
+
+.coverAllImages > img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+}
+
+.dots {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  color: #222;
+}
+
+.dots:hover {
+  color: red;
+}
