@@ -97,8 +97,8 @@ const AppSlider = () => {
           </div>
 
           {/* Slider */}
-          <div className="wp">
-            <div className="wrapper">
+          <div className="boxSlide">
+            <div className="wrapperElements">
               <div className="icon">
                 <FaAngleLeft onClick={handlePrevious} />
               </div>
@@ -123,7 +123,7 @@ const AppSlider = () => {
                   className="dots"
                   onClick={() => handleScroll(index)}
                 >
-                  <h1>●</h1>
+                  <h1 className="active">●</h1>
                 </div>
               ))}
             </div>

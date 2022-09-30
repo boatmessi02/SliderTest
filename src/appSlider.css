@@ -37,7 +37,7 @@
   color: #888888;
 }
 
-.wp {
+.boxSlide {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +45,7 @@
   height: 100%;
 }
 
-.wrapper {
+.wrapperElements {
   position: relative;
   width: 100%;
   display: flex;
@@ -123,4 +123,8 @@
 
 .dots:hover {
   color: red;
+}
+
+.active:active {
+  color: blue;
 }
