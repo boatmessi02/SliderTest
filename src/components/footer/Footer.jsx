@@ -23,6 +23,15 @@ const Footer = () => {
               rel="noreferrer noopener"
             >
               Github
+            </a>{" "}
+            Web{" "}
+            <a
+              className="links"
+              href="https://teerapatdev.netlify.app/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Portfolio
             </a>
           </p>
         </span>
