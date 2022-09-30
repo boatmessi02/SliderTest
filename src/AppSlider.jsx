@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import "./appSlider.css";
 import Typewriter from "typewriter-effect";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
@@ -24,28 +24,45 @@ const sliderList = [
     url: "./images/พี่เหยิน.jpg",
     title: "5",
   },
+  {
+    url: "./images/Art.png",
+    title: "6",
+  },
 ];
 
 const AppSlider = () => {
-  const [indexImage, setIndexImage] = useState(0);
+  const revalRef = useRef([]);
+  revalRef.current = [];
 
   const handlePrevious = () => {
-    const slideImage = indexImage === 0;
-    const newImage = slideImage ? sliderList.length - 1 : indexImage - 1;
-    setIndexImage(newImage);
+    let left = document.querySelector(".wrapperSlide");
+    left.scrollBy(-550, 0);
   };
 
   const handleNext = () => {
-    const slideImage = indexImage === sliderList.length - 1;
-    const newImage = slideImage ? 0 : indexImage + 1;
-    setIndexImage(newImage);
+    let right = document.querySelector(".wrapperSlide");
+    right.scrollBy(550, 0);
+  };
+
+  const handleRef = (ref) => {
+    if (ref && !revalRef.current.includes(ref)) {
+      revalRef.current.push(ref);
+    }
+  };
+
+  const handleScroll = (index) => {
+    const itemRef = revalRef.current;
+    itemRef.map((item, i) => {
+      if (index === i) {
+        item.scrollIntoView();
+      }
+    });
   };
 
   return (
     <>
       <div className="section">
         <div className="container">
-
           {/* Introduce */}
           <div className="wrapperIntroduce">
             <Typewriter
@@ -80,16 +97,35 @@ const AppSlider = () => {
           </div>
 
           {/* Slider */}
-          
-          <div className="WrapperSlide">
-            <div className="icon">
-              <FaAngleLeft onClick={handlePrevious} />
+          <div className="wp">
+            <div className="wrapper">
+              <div className="icon">
+                <FaAngleLeft onClick={handlePrevious} />
+              </div>
+              <div className="wrapperSlide">
+                {sliderList.map((slider, index) => (
+                  <div key={index} className="wrapperSlideImage">
+                    <SliderImage
+                      handleRef={handleRef}
+                      sliderList={slider.url}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="icon">
+                <FaAngleRight onClick={handleNext} />
+              </div>
             </div>
-            <div className="wrapperSlideImage">
-              <SliderImage sliderList={sliderList} indexImage={indexImage} setIndexImage={setIndexImage} />
-            </div>
-            <div className="icon">
-              <FaAngleRight onClick={handleNext} />
+            <div className="wrapperDot">
+              {sliderList.map((slide, index) => (
+                <div
+                  key={index}
+                  className="dots"
+                  onClick={() => handleScroll(index)}
+                >
+                  <h1>●</h1>
+                </div>
+              ))}
             </div>
           </div>
         </div>

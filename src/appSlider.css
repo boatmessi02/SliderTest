@@ -1,7 +1,7 @@
 /* App Slider */
 
 .section {
-  height: 100%;
+  height: 100vh;
   margin-top: 40px;
   margin-bottom: 3rem;
   display: flex;
@@ -37,43 +37,63 @@
   color: #888888;
 }
 
-.WrapperSlide {
+.wp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
   display: flex;
+}
+
+.wrapperSlide {
+  width: 85%;
+  height: auto;
+  display: flex;
+  justify-content: left;
   align-items: center;
-  justify-content: center;
+  overflow: auto;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.wrapperSlide::-webkit-scrollbar {
+  display: none;
 }
 
 .wrapperSlideImage {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border: 2px solid orangered;
+  min-width: 400px;
+  height: 350px;
+  margin: 1px 10px;
+  border: 1px solid white;
+  overflow: hidden;
   border-radius: 25px;
 }
 
-.wrapperSlideImage::before {
+.wrapper::before {
   position: absolute;
   content: "";
-  left: 0;
+  left: 90px;
   top: 0;
   z-index: 99;
   height: 100%;
   width: 100px;
-  border-radius: 25px;
   background-image: linear-gradient(90deg, black, transparent);
 }
 
-.wrapperSlideImage::after {
+.wrapper::after {
   position: absolute;
   content: "";
-  right: 0;
+  right: 90px;
   top: 0;
   z-index: 99;
   height: 100%;
   width: 100px;
-  border-radius: 25px;
   background-image: linear-gradient(-90deg, black, transparent);
 }
 
@@ -81,14 +101,26 @@
   color: #ffb766;
   font-size: 50px;
   outline: none;
+  display: flex;
+  align-items: center;
   border: none;
   padding: 0px 20px;
   cursor: pointer;
 }
 
-.radioSlide {
-  width: 100%;
+.wrapperDot {
   display: flex;
-  gap: 5px;
+  width: 100%;
   justify-content: center;
+}
+
+.dots {
+  cursor: pointer;
+  justify-content: center;
+  color: #222;
+  z-index: 99;
+}
+
+.dots:hover {
+  color: red;
 }
